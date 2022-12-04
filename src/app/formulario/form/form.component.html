@@ -1,0 +1,81 @@
+<div>
+<!-- Section: Design Block -->
+<section class=" text-center text-lg-start">
+    <style>
+      .rounded-t-5 {
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+      }
+  
+      @media (min-width: 992px) {
+        .rounded-tr-lg-0 {
+          border-top-right-radius: 0;
+        }
+  
+        .rounded-bl-lg-5 {
+          border-bottom-left-radius: 0.5rem;
+        }
+      }
+    </style>
+    <div class="card mb-3">
+      <div class="row g-0 d-flex align-items-center">
+        <div class="col-lg-4 d-none d-lg-flex">
+          <img src="../../../assets/asociados.jpg" alt="Trendy Pants and Shoes"
+            class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+        </div>
+        <div class="col-lg-8">
+          <div class="card-body py-5 px-md-5">
+  
+            <form [formGroup]="registroformulario" (submit)="onSubmit()">
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="form2Example1">Nombre</label>
+                  <input [formControl]="nombre" type="nombre" id="form2Example1" class="form-control" />
+                  <small class="text-danger" *ngIf="nombre.errors?.['minlength']"> Debe contener mas de 2 letras</small>
+                </div>
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="form2Example2">Apellido</label>
+                <input [formControl]="apellido" type="apellido" id="form2Example2" class="form-control" />
+                <small class="text-danger" *ngIf="apellido.errors?.['minlength']"> Debe contener mas de 2 letras</small>
+              </div>
+  
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="form2Example3">Email </label>
+                <input [formControl]="email" type="email" id="form2Example3" class="form-control" />
+                <small class="text-danger" *ngIf="email.errors?.['email']">El mail debe ser valido</small> 
+              </div>
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="form2Example4">Contraseña</label>
+                <input [formControl]="contra" type="password" id="form2Example4" class="form-control" />
+                <small *ngIf="contra.errors?.['minlength']" class="text-danger">Debe contener minimo 6 caracteres</small>
+              </div>
+           
+              <!-- 2 column grid layout for inline styling -->
+              <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                  <!-- Checkbox -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                    <label class="form-check-label" for="form2Example31"> recordarme </label>
+                  </div>
+                </div>
+  
+                <div class="col">
+                  <!-- Simple link -->
+                  <a href="#!">¿Olvido contraseña?</a>
+                </div>
+              </div>
+  
+              <!-- Submit button -->
+              <button [disabled]="registroformulario.invalid" type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+  
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+  
