@@ -1,0 +1,22 @@
+<form [formGroup]="loginform" (submit)="onSubmit()">
+<div class="form-outline mb-4">
+    <label class="form-label" for="form2Example3">Email </label>
+  <input [formControl]="email" type="email" id="form2Example3" class="form-control" />
+  <small class="text-danger" *ngIf="email.errors?.['email']">El mail debe ser valido</small> 
+</div>
+<!-- Password input -->
+<div class="form-outline mb-4">
+    <label class="form-label" for="form2Example4">Contraseña</label>
+  <input [formControl]="contra" type="password" id="form2Example4" class="form-control" />
+  <small *ngIf="contra.errors?.['minlength']" class="text-danger">Debe contener minimo 6 caracteres</small>
+</div>
+<div class="col">
+    <!-- Simple link -->
+    <a href="#!">¿Olvido contraseña?</a>
+  </div>
+
+
+<!-- Submit button -->
+<button [disabled]="loginform.invalid" type="submit" class="btn btn-primary btn-block mb-4" (click)="ingreso()"  routerLinkActive="router-link-active" >Sign in</button>
+
+</form>

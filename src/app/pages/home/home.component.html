@@ -1,0 +1,21 @@
+
+  <button type="button" class="btn btn-dark" routerLink="/crear">
+    Agregar 
+</button>
+<button>id</button>
+  <table class="table">
+    <tbody >
+        <tr *ngFor="let us of user" >
+            <td><h4  (click)="traerId()"><b>{{us.id}}</b></h4></td>
+            <td><b>{{us.lastname}}</b></td>
+            <td><b>{{us.email}}</b></td>
+            <td ><button  class="btn btn-dark" routerLink="/editar/{{us.id}}" >
+              <i class="bi bi-arrow-down-right-square"></i>EDITAR
+            </button></td>
+            <td ><button class="btn btn-danger" (click)="delete(us.id)">
+              <i class="bi bi-arrow-down-right-square"></i>BORRAR</button></td>
+              </tr>
+            </tbody>
+          </table>
+          
+         
