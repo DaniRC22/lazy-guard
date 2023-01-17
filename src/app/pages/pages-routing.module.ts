@@ -6,11 +6,9 @@ import { LoginComponent } from '../login/login/login.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {path:'', component:HomeComponent},
   {path:'crear',component:CrearComponent},
-  {path:'editar/:id',component:EditarComponent},
-  
-
-];
+  {path:'editar/:id',component:EditarComponent},];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
